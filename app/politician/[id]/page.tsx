@@ -1,6 +1,11 @@
 import Header from '@/components/layout/Header';
 
-export default function PoliticianProfilePage({ params }: { params: { id: string } }) {
+export default async function PoliticianProfilePage({
+  params
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params;
   return (
     <>
       <Header />
