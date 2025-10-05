@@ -92,6 +92,10 @@ export const API_ENDPOINTS = {
 export const ROUTES = {
   HOME: '/',
   DASHBOARD: '/dashboard',
+  POWER_INDEX: '/power-index',
+  COMPETITORS: '/competitors',
+  AI_STRATEGY: '/ai-strategy',
+  MY_ANALYSIS: '/my-analysis',
   POLITICIAN: '/politician',
   PARTY_COMPARISON: '/party-comparison',
   TRENDS: '/trends',

@@ -30,34 +30,44 @@ export default function Header() {
                 대시보드
               </Link>
               <Link
-                href={ROUTES.PARTY_COMPARISON}
+                href={ROUTES.POWER_INDEX}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(ROUTES.PARTY_COMPARISON)
+                  isActive(ROUTES.POWER_INDEX)
                     ? 'text-primary'
                     : 'text-gray-500 hover:text-primary'
                 }`}
               >
-                정당 비교
+                파워 지수
               </Link>
               <Link
-                href={ROUTES.TRENDS}
+                href={ROUTES.COMPETITORS}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(ROUTES.TRENDS)
+                  isActive(ROUTES.COMPETITORS)
                     ? 'text-primary'
                     : 'text-gray-500 hover:text-primary'
                 }`}
               >
-                이슈 트렌드
+                경쟁 인텔리전스
               </Link>
               <Link
-                href={ROUTES.SEARCH}
+                href={ROUTES.AI_STRATEGY}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(ROUTES.SEARCH)
+                  isActive(ROUTES.AI_STRATEGY)
                     ? 'text-primary'
                     : 'text-gray-500 hover:text-primary'
                 }`}
               >
-                검색
+                AI 전략
+              </Link>
+              <Link
+                href={ROUTES.MY_ANALYSIS}
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive(ROUTES.MY_ANALYSIS)
+                    ? 'text-primary'
+                    : 'text-gray-500 hover:text-primary'
+                }`}
+              >
+                나의 성과
               </Link>
             </div>
           </div>
