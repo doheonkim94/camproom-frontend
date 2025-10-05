@@ -3,14 +3,35 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ROUTES } from '@/constants';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
   const pathname = usePathname();
+  const [dDay, setDDay] = useState<number>(0);
+
+  useEffect(() => {
+    const calculateDDay = () => {
+      const electionDate = new Date('2026-06-03');
+      const today = new Date();
+      const diffTime = electionDate.getTime() - today.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      setDDay(diffDays);
+    };
+
+    calculateDDay();
+    const interval = setInterval(calculateDDay, 1000 * 60 * 60);
+    return () => clearInterval(interval);
+  }, []);
 
   const isActive = (path: string) => pathname === path;
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="bg-[#141930] text-white py-1.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm font-medium">
+          <span className="text-[#8edec5]">D-{dDay}</span> 제9회 전국동시지방선거
+        </div>
+      </div>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
