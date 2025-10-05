@@ -39,7 +39,7 @@ export default function MyAnalysisPage() {
         current: 125000,
         change: -5000,
         changePercent: -3.8,
-        trend: 'down' as const
+        trend: 'down' as 'up' | 'down'
       }
     }
   };

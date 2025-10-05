@@ -1,5 +1,3 @@
-import { FrameCategory } from '@/types';
-
 export const SOCIAL_PLATFORMS = {
   TWITTER: 'twitter',
   YOUTUBE: 'youtube',
@@ -40,7 +38,7 @@ export const SENTIMENT_COLORS: Record<string, string> = {
   neutral: '#6B7280',
 };
 
-export const FRAME_CATEGORIES: Record<FrameCategory, string> = {
+export const FRAME_CATEGORIES: Record<string, string> = {
   economy: '경제',
   welfare: '복지',
   security: '안보',
@@ -51,7 +49,7 @@ export const FRAME_CATEGORIES: Record<FrameCategory, string> = {
   other: '기타',
 };
 
-export const FRAME_COLORS: Record<FrameCategory, string> = {
+export const FRAME_COLORS: Record<string, string> = {
   economy: '#3B82F6',
   welfare: '#10B981',
   security: '#EF4444',

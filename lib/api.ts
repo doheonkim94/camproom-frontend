@@ -3,8 +3,6 @@ import type {
   Politician,
   Party,
   Post,
-  TrendingIssue,
-  Bookmark,
   Notification,
   WeeklyReport,
   ApiResponse,
@@ -84,12 +82,12 @@ class ApiClient {
   async getTrendingIssues(params?: {
     period?: string;
     limit?: number;
-  }): Promise<ApiResponse<TrendingIssue[]>> {
+  }): Promise<ApiResponse<any[]>> {
     const queryParams = new URLSearchParams(params as any).toString();
     return this.request(`${API_ENDPOINTS.TRENDS}?${queryParams}`);
   }
 
-  async getTrendingIssue(id: string): Promise<ApiResponse<TrendingIssue>> {
+  async getTrendingIssue(id: string): Promise<ApiResponse<any>> {
     return this.request(`${API_ENDPOINTS.TRENDS}/${id}`);
   }
 
@@ -100,11 +98,11 @@ class ApiClient {
   }
 
   // 북마크 관련 API
-  async getBookmarks(): Promise<ApiResponse<Bookmark[]>> {
+  async getBookmarks(): Promise<ApiResponse<any[]>> {
     return this.request(API_ENDPOINTS.BOOKMARKS);
   }
 
-  async addBookmark(data: Omit<Bookmark, 'id' | 'createdAt'>): Promise<ApiResponse<Bookmark>> {
+  async addBookmark(data: any): Promise<ApiResponse<any>> {
     return this.request(API_ENDPOINTS.BOOKMARKS, {
       method: 'POST',
       body: JSON.stringify(data),
